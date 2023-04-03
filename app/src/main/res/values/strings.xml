@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">DrawPic</string>
+    <string name="shareing">Share the image</string>
+    <string name="confmsg">Are you sure want to erase the whole canvas?\nYou can\'t undo this action later.</string>
+    <string name="instruction">Having Question?\nHow to control this application?😕\n\nDon\'t worry one tutorial is available on how to control this application.\n\nSelect your choice accordingly.</string>
+    <string name="tutorial">Tutorial</string>
+    <string name="skip">skip</string>
+    <string name="skip_tutorial">Ok,Let\'s go</string>
+    <string name="tut_instruction">Follow the tutorial step by step to use the application without any problem , still you face any problem just put a request on the review section , we will update out tutorial soon.\n\n Best wishes ❤.</string>
+    <string name="_1_click_on_drawing_to_save_only_drawing">1.Click on Drawing to save only drawing.</string>
+    <string name="dlt_confirm">Are you sure want remove the background image?\nYou can\'t undo this action later.</string>
+    <string name="_2_click_on_the_frame_to_save_the_whole_frame_with_background_if_present">2.Click on the frame to save the whole frame with background if present.</string>
+</resources>
