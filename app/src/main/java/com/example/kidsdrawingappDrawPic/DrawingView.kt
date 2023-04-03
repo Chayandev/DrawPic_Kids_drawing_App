@@ -7,6 +7,8 @@ import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.MotionEvent
 import android.view.View
+import java.util.*
+import kotlin.collections.ArrayList
 
 class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mDrawPath: CustomPath? = null
@@ -17,7 +19,7 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
     private var color = Color.BLACK //default color
     private var canvas: Canvas? = null
     private var mPaths = ArrayList<CustomPath>()
-    private var mUndoPaths = ArrayList<CustomPath>()
+    private var mUndoPaths = Stack<CustomPath>()
 
     init {
         seUPtDrawing()
@@ -104,7 +106,7 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
 
     fun resetScreen() {
         mPaths.removeAll(mPaths.toSet())
-        mUndoPaths.removeAll(mUndoPaths.toSet())
+        mUndoPaths.clear()
         mDrawPath?.reset()
 
         invalidate();
@@ -112,15 +114,15 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
 
     fun onUndoClick() {
         if (mPaths.size > 0) {
-            mUndoPaths.add(mPaths.removeAt(mPaths.size - 1))
+            mUndoPaths.push(mPaths.removeAt(mPaths.size - 1))
             invalidate()
         }
     }
 
     fun onRedoCLick() {
         if (mUndoPaths.size > 0) {
-            mUndoPaths.reverse()
-            mPaths.add(mUndoPaths.removeAt(0))
+            mPaths.add(mUndoPaths.peek())
+            mUndoPaths.pop()
             invalidate()
         }
     }
