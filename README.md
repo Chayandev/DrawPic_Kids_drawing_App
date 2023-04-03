@@ -32,29 +32,27 @@ and atlast share the image to any sharable platfomr to showcase your creativity.
 
 ***Here is the main activity screen , contain several features.***
 
-* **Colors:** There are multiple color avialabe here , chosse one accordingly and use it.
+* **Colors:** There are multiple colors available here, choose one accordingly and use it.
 
-* **Brush Size:** Here are 4 diffrent brush sizes are avialabe , choice accordingly and use.
+* **Brush Size:** Here are 4 different brush sizes available, Choose accordingly and use them.
 
-* **Undo Button:** If you feel there is somthing wrong in yur drawing , use undo button to change the drawing.
+* **Undo Button:** If you feel there is something wrong with your drawing, use undo button to change the drawing.
 
-* **Redo Button:** If you have clicked Undo button but you ant to get back your previous work then use redo button.
+* **Redo Button:** If you have clicked Undo button but want to get back your previous work, then use the redo button.
 
-* **Wipe Canvas:** Want to cleat whole canvas? then use the wipe button to wipe the canvas.
+* **Wipe Canvas:** Want to clean the whole canvas? then use the wipe button to wipe the canvas.
 
-* **Import Image:** Want to trace a image? use the import imgae button and trace the image properly.
+* **Import Image:** ant to trace an image? Use the import image button and trace the image properly.
 
-* **Delet Button:** Want to remove the imported image in the canvas use the delet button to remove the image.
+* **Delet Button:** Want to remove the imported image in the canvas use the delete button.
 
 ### Two mote Features (click the "+" icon to use those):-
 
-* **Save Button:** Want to save your drawing image, then just click the save button and you will find two option , one is save whole frame 
-or save only drawing.
-  * >> if you are using one backgorund(imported image) to your canvas and want to keep this with your drawing then click Frame to get the whole thing.
+* **Save Button:** If you want to save your drawing image, then just click the save button and you will find two options, one is save the whole frame or save only the drawing.
+  * >>if you are adding one background (imported image) to your canvas and want to keep this with your drawing, then click Frame to get the whole thing.
+  * >>if you are not using any background image (or vice versa) on your canvas but don't want to keep the background with your drawing, then select only drawing to save it.
 
-  * >>if you are not using any background image (or vice versa) to your canvas  but dont want to keep the background with your drawing then select only drawing to save it.
-
-* **Share Button:** Wnat to share you creative drawing to your friends/family then share it via shareble platform.
+* **Share Button:** Want to share your creative drawing with your friends/family and then share it via a shareable platform.
 
 ```diff
 - 🛑NOTE:- Use stylus for better experience
