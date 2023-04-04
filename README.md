@@ -1,5 +1,5 @@
 # DrawPic_Kids_drawing_App
-## DrawPic is mianly a kids Drawing app , but all aged people can use it,no age bound is there.  
+## DrawPic is mainly a kids Drawing app , but all aged people can use it,no age bound is there.  
 
 ![Promotional Image](https://user-images.githubusercontent.com/91884990/229551501-8112e5bf-db96-4c5f-9da6-796ffb0bcbbe.png)
 
