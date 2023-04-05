@@ -154,36 +154,10 @@ class MainActivity : AppCompatActivity() {
         }
         //save btn
         binding.saveBtn.setOnClickListener {
-            choiceCustomDialog = Dialog(this)
-            choiceCustomDialog!!.setContentView(R.layout.choice_custom_dialog)
-            choiceCustomDialog?.setTitle("Please Confirm one choice")
-            var drawBtn = choiceCustomDialog!!.findViewById<Button>(R.id.onlyDrawBtn)
-            var frameBtn = choiceCustomDialog!!.findViewById<Button>(R.id.frameBtn)
-            var cancelBtn = choiceCustomDialog?.findViewById<ImageView>(R.id.cancel)
-            drawBtn.setOnClickListener {
-                showCustomProgressBar()
-                if (isReadStorageAllowed()) {
-                    lifecycleScope.launch {
-                        saveBitmapFile(getBitmapFromView(binding.drawingView))
-                    }
-                }
-                choiceCustomDialog?.dismiss()
-            }
-            frameBtn.setOnClickListener {
-                showCustomProgressBar()
-                if (isReadStorageAllowed()) {
-                    lifecycleScope.launch {
-                        saveBitmapFile(getBitmapFromView(binding.frame))
-                    }
-                }
-                choiceCustomDialog!!.dismiss()
-            }
-            cancelBtn?.setOnClickListener {
-                choiceCustomDialog?.dismiss()
-            }
-            choiceCustomDialog?.setCancelable(false)
-            choiceCustomDialog?.show()
-
+            if(isWriteStorageAllowed())
+            saveImageToStorage()
+            else
+                requestStoragePermissionForSave()
         }
         //image add
         binding.addImg.setOnClickListener {
@@ -226,7 +200,37 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    
+
+    private fun saveImageToStorage() {
+        choiceCustomDialog = Dialog(this)
+        choiceCustomDialog!!.setContentView(R.layout.choice_custom_dialog)
+        choiceCustomDialog?.setTitle("Please Confirm one choice")
+        var drawBtn = choiceCustomDialog!!.findViewById<Button>(R.id.onlyDrawBtn)
+        var frameBtn = choiceCustomDialog!!.findViewById<Button>(R.id.frameBtn)
+        var cancelBtn = choiceCustomDialog?.findViewById<ImageView>(R.id.cancel)
+        drawBtn.setOnClickListener {
+            showCustomProgressBar()
+            lifecycleScope.launch {
+                    saveBitmapFile(getBitmapFromView(binding.drawingView))
+                }
+
+            choiceCustomDialog?.dismiss()
+        }
+        frameBtn.setOnClickListener {
+            showCustomProgressBar()
+                lifecycleScope.launch {
+                    saveBitmapFile(getBitmapFromView(binding.frame))
+                }
+
+            choiceCustomDialog!!.dismiss()
+        }
+        cancelBtn?.setOnClickListener {
+            choiceCustomDialog?.dismiss()
+        }
+        choiceCustomDialog?.setCancelable(false)
+        choiceCustomDialog?.show()
+    }
+
     private fun onAddButtonClicked() {
         setVisibility(clicked)
         setAnimation(clicked)
@@ -351,7 +355,12 @@ class MainActivity : AppCompatActivity() {
         )
         return result == PackageManager.PERMISSION_GRANTED
     }
-
+   private fun isWriteStorageAllowed():Boolean{
+       val result=ContextCompat.checkSelfPermission(
+           this,Manifest.permission.WRITE_EXTERNAL_STORAGE
+       )
+       return result==PackageManager.PERMISSION_GRANTED
+   }
     private fun requestStoragePermission() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(
                 this,
@@ -369,6 +378,24 @@ class MainActivity : AppCompatActivity() {
                     // android.Manifest.permission.WRITE_EXTERNAL_STORAGE
                 )
             )
+        }
+    }
+    private fun requestStoragePermissionForSave() {
+      ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),100)
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        if(requestCode==100){
+            if(grantResults.size>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                 saveImageToStorage()
+            }
+            else{
+                Toast.makeText(this,"Permission not granted,so image can't be saved in storage.",Toast.LENGTH_LONG).show()
+            }
         }
     }
 
