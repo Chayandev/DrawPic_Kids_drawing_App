@@ -43,7 +43,7 @@
 
 * **Delet Button:** Want to remove the imported image in the canvas use the delete button.
 
-### Two mote Features (click the "+" icon to use those):-
+### Two more Features (click the "+" icon to use those):-
 
 * **Save Button:** If you want to save your drawing image, then just click the save button and you will find two options, one is save the whole frame or save only the drawing.
   * >>if you are adding one background (imported image) to your canvas and want to keep this with your drawing, then click Frame to get the whole thing.
