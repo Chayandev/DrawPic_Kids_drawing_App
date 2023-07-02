@@ -2,7 +2,7 @@
 
 ![Promotional Image](https://user-images.githubusercontent.com/91884990/229551501-8112e5bf-db96-4c5f-9da6-796ffb0bcbbe.png)
 
-**DrawPic is a user-friendly drawing app suitable for all ages. Some of its features include a wide range of color options, the ability to undo and redo actions, the option to clear the canvas, importing images for tracing, multiple brush sizes, deleting imported images, and saving and sharing drawings. Its user-friendly interface makes it easy to use, and it's a great platform for showcasing creativity.**
+***DrawPic is a user-friendly drawing app suitable for all ages. Some of its features include a wide range of color options, the ability to undo and redo actions, the option to clear the canvas, importing images for tracing, multiple brush sizes, deleting imported images, and saving and sharing drawings. Its user-friendly interface makes it easy to use, and it's a great platform for showcasing creativity.***
 
 ### Some Screen shots of diffrent Activities of the application:-
 # Splash Screen:
